@@ -10,6 +10,13 @@ namespace RattfieldNz\UrlValidation\RegexLibraries;
 
 use RattfieldNz\UrlValidation\UrlComponents;
 
+/**
+ * Class RegexLibraries
+ * This class contains defined regular expressions
+ * (derived from external sources), which are used
+ * to validate the syntax of a URL.
+ * @package RattfieldNz\UrlValidation\RegexLibraries
+ */
 class RegexLibraries {
 
     /**

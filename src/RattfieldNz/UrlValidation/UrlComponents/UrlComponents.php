@@ -21,7 +21,7 @@ class UrlComponents {
     /**
      * This function converts an array of url protocols,
      * and formats them to be used in url-related regex.
-     * @return mixed
+     * @return string
      * @uses Helpers::arrayToString
      * @uses self::urlProtocols
      * @uses Helpers::replaceCharacters
@@ -36,7 +36,7 @@ class UrlComponents {
     /**
      * This function converts an array of url extensions,
      * and formats them to be used in url-related regex.
-     * @return mixed
+     * @return string
      * @uses Helpers::arrayToString
      * @uses self::urlExtensions
      * @uses Helpers::replaceCharacters
@@ -62,6 +62,7 @@ class UrlComponents {
      * This returns an array of current valid url extensions.
      * As of Mar 16 2015, there are 769 extensions. Sourced from
      * https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+     * @return array
      */
     public static function urlExtensions()
     {

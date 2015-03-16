@@ -8,14 +8,13 @@
 
 namespace RattfieldNz\UrlValidation;
 
-use RattfieldNz\UrlValidation\RegexLibraries;
-use Illuminate\Support\Facades\Config;
-
+/**
+ * Class UrlValidation
+ * A class which holds functionality to
+ * validate URLs.
+ * @package RattfieldNz\UrlValidation
+ */
 class UrlValidation {
-
-    public static function hi(){
-        return "hello!";
-    }
 
     /**
      * A function to see whether a given URL
@@ -24,15 +23,19 @@ class UrlValidation {
      * @return bool
      */
     public static function exists($url){
-        if(!checkdnsrr($url))
-        {
-            return false;
-        }
-        return true;
+
+        return !checkdnsrr($url) ? true : false;
     }
 
-    public static function hasCorrectSyntax()
+    /**
+     * A function to see if a URL matches
+     * a given regular expression or not.
+     * @param $url
+     * @param $syntax_regex
+     * @return bool
+     */
+    public static function matchesSyntax($url, $syntax_regex)
     {
-
+        return preg_match($syntax_regex, $url) ? true : false;
     }
 }
