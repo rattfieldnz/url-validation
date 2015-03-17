@@ -17,6 +17,8 @@ Validation for this package will include:
 ### <a name="17032015">17 March 2015 (St. Patricks Day!)</a>
 Today's development involved refactoring of code and file structure. I also added more formatted comments as appropriate.
 
+An external library, <a href="https://github.com/jmathai/php-multi-curl" title="php-multi-curl" target="_blank">php-multi-curl</a>, was sourced to enable more reliable checking.
+
 TO DO: Plan for proper unit testing - given the number of possible URL combinations to test, this will require some thinking and research.
 
 ### <a name="16032015">16 March 2015</a>
