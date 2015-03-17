@@ -7,6 +7,7 @@
  */
 
 namespace RattfieldNz\UrlValidation;
+use RattfieldNz\UrlValidation\ExternalSources\Jmathai\PhpMultiCurl\EpiCurl;
 
 /**
  * Class UrlValidation
@@ -23,8 +24,9 @@ class UrlValidation {
      * @return bool
      */
     public static function exists($url){
-
-        return !checkdnsrr($url) ? true : false;
+        //Check if HTTP status code is less than 400 -
+        // return true if it is, or else false.
+        return (self::statusCode($url) < 400) ? true : false;
     }
 
     /**
@@ -37,5 +39,24 @@ class UrlValidation {
     public static function matchesSyntax($url, $syntax_regex)
     {
         return preg_match($syntax_regex, $url) ? true : false;
+    }
+
+    /**
+     * This function obtains an HTTP status
+     * code form a given URL.
+     * @param $url
+     * @return int
+     */
+    public static function statusCode($url)
+    {
+        //Instantiate the EpiCurl class to be used
+        //with checking URL HTTP status code.
+        $epi_curl_checker = EpiCurl::getInstance();
+
+        // Add the given URL to the url checker.
+        $url_check = $epi_curl_checker->addURL($url);
+
+        //Return the HTTP status code.
+        return $url_check->code;
     }
 }
