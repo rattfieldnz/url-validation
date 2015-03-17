@@ -1,4 +1,6 @@
-Copyright (c) 2015 and beyond <a href="http://www.robertattfield.com>Robert Attfield</a>
+The MIT License (MIT)
+
+Copyright (c) 2015 - Present <a href="http://www.robertattfield.com" target="_blank" title="Rob Attfield">Rob Attfield</a>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
