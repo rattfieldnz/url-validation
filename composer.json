@@ -1,6 +1,6 @@
 {
     "name": "rattfieldnz/url-validation",
-    "description": "",
+    "description": "This is a Laravel composer package for validating URL's.",
     "authors": [
         {
             "name": "Rob Attfield",
