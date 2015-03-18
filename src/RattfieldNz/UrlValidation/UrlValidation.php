@@ -20,11 +20,11 @@ class UrlValidation {
 
     /**
      * A function to see whether a given URL
-     * exists or not.
+     * urlExists or not.
      * @param $url
      * @return bool
      */
-    public static function exists($url){
+    public static function urlExists($url){
         //Check if HTTP status code is less than 400 -
         // return true if it is, or else false.
         return (self::getUrlStatusCode($url) < StatusCodes::HTTP_BAD_REQUEST) ? true : false;
