@@ -8,6 +8,7 @@
 
 namespace RattfieldNz\UrlValidation;
 use RattfieldNz\UrlValidation\ExternalSources\Jmathai\PhpMultiCurl\EpiCurl;
+use RattfieldNz\UrlValidation\HttpLibraries\StatusCodes;
 
 /**
  * Class UrlValidation
@@ -26,7 +27,7 @@ class UrlValidation {
     public static function exists($url){
         //Check if HTTP status code is less than 400 -
         // return true if it is, or else false.
-        return (self::statusCode($url) < 400) ? true : false;
+        return (self::statusCode($url) < StatusCodes::HTTP_BAD_REQUEST) ? true : false;
     }
 
     /**
@@ -43,7 +44,7 @@ class UrlValidation {
 
     /**
      * This function obtains an HTTP status
-     * code form a given URL.
+     * code from a given URL.
      * @param $url
      * @return int
      */
