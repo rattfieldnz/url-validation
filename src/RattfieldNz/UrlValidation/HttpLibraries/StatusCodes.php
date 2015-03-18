@@ -73,10 +73,10 @@ class StatusCodes {
     const HTTP_URI_TOO_LONG = 414;
     const HTTP_UNSUPPORTED_MEDIA_TYPE = 415;
     const HTTP_RANGE_NOT_ACCEPTABLE = 416;
-    const HTTP_XPECTATION_FAILED = 417;
+    const HTTP_EXPECTATION_FAILED = 417;
     // 418 to 420 unassigned.
     const HTTP_MISDIRECTED_REQUEST = 421;
-    const HTTP_UNPROCSSABLE_ENTITY = 422;
+    const HTTP_UNPROCESSABLE_ENTITY = 422;
     const HTTP_LOCKED = 423;
     const HTTP_FAILED_DEPENDENCY = 424;
     // 425 unassigned.
@@ -141,9 +141,9 @@ class StatusCodes {
 		self::HTTP_URI_TOO_LONG => 'URI Too Long',
 		self::HTTP_UNSUPPORTED_MEDIA_TYPE => 'Unsupported Media Type',
 		self::HTTP_RANGE_NOT_ACCEPTABLE => 'Range Not Satisfiable',
-		self::HTTP_XPECTATION_FAILED => 'Expectation Failed',
+		self::HTTP_EXPECTATION_FAILED => 'Expectation Failed',
 		self::HTTP_MISDIRECTED_REQUEST => 'Misdirected Request',
-		self::HTTP_UNPROCSSABLE_ENTITY => 'Unprocessable Entity',
+		self::HTTP_UNPROCESSABLE_ENTITY => 'Unprocessable Entity',
 		self::HTTP_LOCKED => 'Locked',
 		self::HTTP_FAILED_DEPENDENCY => 'Failed Dependency',
 		self::HTTP_UPGRADE_REQUIRED => 'Upgrade Required',
@@ -167,12 +167,13 @@ class StatusCodes {
      * A function to retrieve an HTTP status message
      * for a given HTTP status code.
      * @param $status_code
+     * @uses self::isValidStatusCode
      * @uses self::http_messages
      * @return string
      */
     public static function getHttpStatusMessage($status_code)
     {
-        if(is_int($status_code))
+        if(self::isValidStatusCode($status_code))
         {
             return self::$http_messages[$status_code];
         }
@@ -184,11 +185,27 @@ class StatusCodes {
      * from a given HTTP status code and
      * related HTTP message.
      * @param $status_code
+     * @uses self::isValidStatusCode
      * @uses self::getHttpStatusMessage
      * @return string
      */
     public static function generateHttpHeader($status_code)
     {
-        return 'HTTP/1.1 ' . self::getHttpStatusMessage($status_code);
+        if(self::isValidStatusCode($status_code)) {
+            return 'HTTP/1.1 ' . self::getHttpStatusMessage($status_code);
+        }
+        return "";
+    }
+
+    public static function isValidStatusCode($status_code)
+    {
+        if(is_int($status_code))
+        {
+            if(in_array($status_code, self::$http_messages)) {
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 }
