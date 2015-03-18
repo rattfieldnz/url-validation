@@ -4,9 +4,17 @@
     "authors": [
         {
             "name": "Rob Attfield",
-            "email": "emailme@robertattfield.com"
+            "email": "emailme@robertattfield.com",
+            "homepage": "http://www.robertattfield.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+      "email": "emailme@robertattfield.com",
+      "issues": "https://github.com/rattfieldnz/url-validation/issues",
+      "wiki": "https://github.com/rattfieldnz/url-validation/wiki",
+      "source": "https://github.com/rattfieldnz/url-validation"
+    },
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.0.*"
@@ -14,7 +22,16 @@
     "autoload": {
         "psr-0": {
             "RattfieldNz\\UrlValidation": "src/"
+        },
+        "psr-4": {
+          "RattfieldNz\\UrlValidation\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/rattfieldnz/url-validation"
+      }
+    ]
 }
