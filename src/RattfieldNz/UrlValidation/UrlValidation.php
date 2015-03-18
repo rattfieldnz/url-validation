@@ -37,7 +37,7 @@ class UrlValidation {
      * @param $syntax_regex
      * @return bool
      */
-    public static function matchesSyntax($url, $syntax_regex)
+    public static function urlMatchesSyntax($url, $syntax_regex)
     {
         return preg_match($syntax_regex, $url) ? true : false;
     }
