@@ -27,7 +27,7 @@ class UrlValidation {
     public static function exists($url){
         //Check if HTTP status code is less than 400 -
         // return true if it is, or else false.
-        return (self::statusCode($url) < StatusCodes::HTTP_BAD_REQUEST) ? true : false;
+        return (self::getUrlStatusCode($url) < StatusCodes::HTTP_BAD_REQUEST) ? true : false;
     }
 
     /**
@@ -48,7 +48,7 @@ class UrlValidation {
      * @param $url
      * @return int
      */
-    public static function statusCode($url)
+    public static function getUrlStatusCode($url)
     {
         //Instantiate the EpiCurl class to be used
         //with checking URL HTTP status code.
