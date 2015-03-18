@@ -22,6 +22,7 @@ class UrlValidation {
      * A function to see whether a given URL
      * urlExists or not.
      * @param $url
+     * @uses self::getUrlStatusCode
      * @return bool
      */
     public static function urlExists($url){
@@ -46,6 +47,7 @@ class UrlValidation {
      * This function obtains an HTTP status
      * code from a given URL.
      * @param $url
+     * @uses EpiCurl::getInstance
      * @return int
      */
     public static function getUrlStatusCode($url)

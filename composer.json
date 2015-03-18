@@ -19,9 +19,14 @@
         "php": ">=5.4.0",
         "illuminate/support": "5.0.*"
     },
+    "require-dev": {
+      "phpunit/phpunit": "~4.0",
+      "phpspec/phpspec": "~2.1",
+      "phpunit/php-invoker": "dev-master"
+    },
     "autoload": {
         "psr-0": {
-            "RattfieldNz\\UrlValidation": "src/"
+          "RattfieldNz\\UrlValidation": "src/"
         },
         "psr-4": {
           "RattfieldNz\\UrlValidation\\": "src/"
