@@ -22,7 +22,6 @@
       "phpunit/phpunit": "~4.0",
       "phpspec/phpspec": "~2.1",
       "phpunit/php-invoker": "dev-master",
-      "phpunit/phpunit-skeleton-generator": "2.0.*@dev",
         "orchestra/testbench": "3.1.*"
     },
     "autoload": {
