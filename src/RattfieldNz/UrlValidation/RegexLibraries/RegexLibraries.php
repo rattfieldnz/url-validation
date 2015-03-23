@@ -7,8 +7,7 @@
  */
 
 namespace RattfieldNz\UrlValidation\RegexLibraries;
-
-use RattfieldNz\UrlValidation\UrlComponents;
+use RattfieldNz\UrlValidation\UrlComponents\UrlComponents;
 
 /**
  * Class RegexLibraries
