@@ -6,7 +6,7 @@
  * Time: 21:11
  */
 
-namespace RattfieldNz\UrlValidation;
+namespace RattfieldNz\UrlValidation\UrlComponents;
 use RattfieldNz\UrlValidation\Helpers\Helpers;
 
 /**

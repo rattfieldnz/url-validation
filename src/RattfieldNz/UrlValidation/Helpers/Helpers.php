@@ -40,10 +40,6 @@ class Helpers {
      */
     public static function replaceCharacters($string, $replace_from, $replace_to)
     {
-        if($string && $replace_from && $replace_to)
-        {
-            return str_replace($replace_from, $replace_to, $string);
-        }
-
+        return str_replace($replace_from, $replace_to, $string);
     }
 }

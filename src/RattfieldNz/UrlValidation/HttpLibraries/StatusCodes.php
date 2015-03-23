@@ -31,14 +31,15 @@ class StatusCodes {
 
     /** Successful (2xx) */
     const HTTP_OK = 200;
-    const HTTP_CREATED = 200;
-    const HTTP_ACCEPTED = 201;
+    const HTTP_CREATED = 201;
+    const HTTP_ACCEPTED = 202;
     const HTTP_NON_AUTH_INFORMATION = 203;
     const HTTP_NO_CONTENT = 204;
     const HTTP_RESET_CONTENT = 205;
     const HTTP_PARTIAL_CONTENT = 206;
     const HTTP_MULTI_STATUS = 207;
     const HTTP_ALREADY_REPORTED = 208;
+    // 209 to 225 unassigned
     const HTTP_IM_USED = 226;
     // 227 to 299 unassigned
 
@@ -203,12 +204,8 @@ class StatusCodes {
 
     public static function isValidStatusCode($status_code)
     {
-        if(is_int($status_code))
-        {
-            if(in_array($status_code, self::$http_messages)) {
-                return true;
-            }
-            return false;
+        if(array_key_exists($status_code, self::$http_messages)) {
+            return true;
         }
         return false;
     }
